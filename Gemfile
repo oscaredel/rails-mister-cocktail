@@ -6,7 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 ruby '2.3.5'
-
+gem 'faker'
 
 # CSS GEMS
 gem 'bootstrap-sass'
