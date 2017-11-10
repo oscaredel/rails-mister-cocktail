@@ -7,14 +7,13 @@
         <li>
           <strong>
             <%=  dose.description %>
-            <%=  dose.ingredient %>
+            <%=  dose.ingredient.name %>
           </strong>
         </li>
         <% end %>
       </ul>
       <%= link_to "All cocktails", cocktails_path, class: "btn btn-primary" %>
       <%= link_to "Add new cocktail dose", new_cocktail_dose_path(@cocktail), class: "btn btn-primary" %>
-      </ul>
     </div>
   </div>
 </div>
