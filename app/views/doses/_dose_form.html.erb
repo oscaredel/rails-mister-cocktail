@@ -1,0 +1,12 @@
+<%= simple_form_for [@cocktail, @dose] do |f| %>
+  <% if @dose.errors.any? %>
+  <ul>
+    <% @dose.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+  <%= f.input :description, label: 'Amount' %>
+  <%= f.association :ingredient, class: 'select-ingredient' %>
+  <%= f.submit "Add new dose", class: 'btn btn-success rounded-pill' %>
+<% end %>

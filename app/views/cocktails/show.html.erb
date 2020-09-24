@@ -1,0 +1,44 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container-fluid">
+    <h1 class="display-4"><%= @cocktail.name %></h1>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      <div class="doses">
+        <ul>
+          <% @cocktail.doses.each do |dose| %>
+            <li><%= dose.description %> <%= dose.ingredient.name %> <%= link_to "delete", cocktail_dose_path(@cocktail, dose), method: :delete%></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="dose_form">
+        <h5>Add a dose</h5>
+        <%= render 'doses/dose_form' %>
+      </div>
+    </div>
+  </div>
+<div class="row">
+  <div class="reviews">
+      <ul>
+        <% @cocktail.reviews.each do |review| %>
+          <li><%= review.rating %> <%= review.content %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-4">
+      <div class="review_form">
+        <h5>Add a review</h5>
+        <%= render 'reviews/review_form' %>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
