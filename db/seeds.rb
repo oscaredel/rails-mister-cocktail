@@ -11,9 +11,12 @@
   Ingredient.create(name: name)
 end
 
+puts "should add photo to this seed"
+
 ['white russian', 'old fashioned', 'gin and tonic'].each do |name|
   Cocktail.create(name: name)
 end
+
 
 Dose.create(description: '1 kube', ingredient: Ingredient.find_by(name: 'sugar'), cocktail: Cocktail.find_by(name: 'white russian'))
 Dose.create(description: '1 spoon', ingredient: Ingredient.find_by(name: 'gin'), cocktail: Cocktail.find_by(name: 'gin and tonic'))
